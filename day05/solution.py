@@ -1,6 +1,3 @@
-from collections import deque
-
-
 def convert(map: list[tuple[int, int, int]], n: int):
     for dst, src, length in map:
         if src <= n < src+length:

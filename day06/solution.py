@@ -53,8 +53,6 @@ if __name__ == '__main__':
         print(f'Usage: python solution.py [part1, part2]')
         exit(1)
 
-    input = """Time:      7  15   30
-Distance:  9  40  200"""
     input = open(Path(__file__).parent / 'input.txt').read()
     if part == 'part1':
         solution = part1(input)
