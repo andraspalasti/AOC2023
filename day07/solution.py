@@ -38,11 +38,9 @@ def score_with_joker(hand: str):
     value = int(hand, base=16)
 
     hand = hand.replace('1', '')
-    if hand:
-        hand_type = tuple(sorted(Counter(hand).values(), reverse=True))
-        hand_type = (hand_type[0] + 5-len(hand), *hand_type[1:])
-    else:
-        hand_type = (5,)
+    hand_type = tuple(sorted(Counter(hand).values(),
+                      reverse=True)) if hand else (0,)
+    hand_type = (hand_type[0] + 5-len(hand), *hand_type[1:])
 
     for i, t in enumerate(TYPES):
         if hand_type == t:
